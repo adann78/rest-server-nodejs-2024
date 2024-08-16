@@ -59,10 +59,13 @@ const usuariosPost=async (req, res=response)=> {
     
   }
   const usuariosDel=async(req, res=response)=> {
-    const {id}=req.params;
+    const { id }=req.params;
+    //const uid=req.uid;
     //const usuario=await Usuario.findByIdAndDelete(id)
-    const usuario=await Usuario.findByIdAndUpdate(id,{estado:false})
-    res.json(usuario)
+    const usuario=await Usuario.findByIdAndUpdate( id, { estado: false} );
+    
+    
+    res.json(usuario);
   }
   const usuariosPatch=(req, res=response)=> {
     res.json({
